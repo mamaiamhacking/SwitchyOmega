@@ -1,7 +1,5 @@
 (function() {
-  $script.ready('om-state', updateMenuByState);
-  $script.ready('om-page-info', updateMenuByPageInfo);
-  $script.ready(['om-state', 'om-page-info'], updateMenuByStateAndPageInfo);
+  
 
   var profileTemplate = document.getElementById('js-profile-tpl')
     .cloneNode(true);
@@ -25,7 +23,9 @@
     'RuleListProfile': 3000,
   };
 
-  return;
+  $script.ready('om-state', updateMenuByState);
+  $script.ready('om-page-info', updateMenuByPageInfo);
+  $script.ready(['om-state', 'om-page-info'], updateMenuByStateAndPageInfo);
 
   function updateMenuByState() {
     var state = OmegaPopup.state;
@@ -114,10 +114,10 @@
     }
   }
 
-    var isValidResultProfile = {};
-    validResultProfiles.forEach(function(name) {
-      isValidResultProfile['+' + name] = true;
-    });
+    // var isValidResultProfile = {};
+    // validResultProfiles.forEach(function(name) {
+    //   isValidResultProfile['+' + name] = true;
+    // });
 
   function addProfilesItems(state) {
     var systemProfileDisp = document.getElementById('js-system');
